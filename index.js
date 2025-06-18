@@ -26,6 +26,7 @@ program
 
       console.log(`\n📄 Initializing package.json ...`);
       await execa('npm', ['init', '-y'], { cwd: projectPath, stdio: 'inherit' });
+      await execa('npm', ['pkg', 'set', 'type=module'], { cwd: projectPath, stdio: 'inherit' });
       
       console.log(`📦 Installing dependencies ...`);
       await execa('npm', ['install', 'express'], { cwd: projectPath, stdio: 'inherit' });
