@@ -8,7 +8,7 @@ const { program } = require('commander');
 program
   .name('create-nodecic')
   .description('CLI to scaffold a new Node.js project from a template')
-  .version('1.2.0')
+  .version('1.3.0')
   .argument('[project-name]', 'Name of the new project')
   .action(async (projectName) => {
     if (!projectName) {
