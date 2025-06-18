@@ -9,10 +9,9 @@ program
   .name('create-nodecic')
   .description('CLI to scaffold a new Node.js project from a template')
   .version('1.2.0')
-  .argument('<project-name>', 'Name of the new project')
+  .argument('[project-name]', 'Name of the new project')
   .action(async (projectName) => {
-
-    if(!projectName) {
+    if (!projectName) {
       console.error('❌ Please provide a project name.');
       console.error('Usage: npm create nodecic <project-name>');
       process.exit(1);
@@ -34,7 +33,7 @@ program
       console.log(`\n📄 Initializing package.json ...`);
       await execa('npm', ['init', '-y'], { cwd: projectPath, stdio: 'inherit' });
       await execa('npm', ['pkg', 'set', 'type=module'], { cwd: projectPath, stdio: 'inherit' });
-      
+
       console.log(`📦 Installing dependencies ...`);
       await execa('npm', ['install', 'express'], { cwd: projectPath, stdio: 'inherit' });
 
