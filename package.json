@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "bin": {
+    "create-nodecic": "./index.js"
+  },
   "dependencies": {
     "commander": "^14.0.0"
   }
