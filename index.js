@@ -13,7 +13,7 @@ program
   .action(async (projectName) => {
     if (!projectName) {
       console.error('❌ Please provide a project name.');
-      console.error('Usage: npm create nodecic@latest <project-name>');
+      console.error('Usage: npm create nodecic <project-name>');
       return;
     }
 
