@@ -8,13 +8,13 @@ const { program } = require('commander');
 program
   .name('create-nodecic')
   .description('CLI to scaffold a new Node.js project from a template')
-  .version('1.3.0')
+  .version('1.0.0')
   .argument('[project-name]', 'Name of the new project')
   .action(async (projectName) => {
     if (!projectName) {
       console.error('❌ Please provide a project name.');
-      console.error('Usage: npm create nodecic <project-name>');
-      process.exit(1);
+      console.error('Usage: npm create nodecic@latest <project-name>');
+      return;
     }
 
     const currentDir = process.cwd();
@@ -23,7 +23,7 @@ program
 
     if (fs.existsSync(projectPath)) {
       console.error(`❌ The folder "${projectName}" already exists!`);
-      process.exit(1);
+      return;
     }
 
     try {
