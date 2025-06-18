@@ -11,6 +11,13 @@ program
   .version('1.0.0')
   .argument('<project-name>', 'Name of the new project')
   .action(async (projectName) => {
+
+    if(!projectName) {
+      console.error('❌ Please provide a project name.');
+      console.error('Usage: npm create nodecic <project-name>');
+      process.exit(1);
+    }
+
     const currentDir = process.cwd();
     const projectPath = path.join(currentDir, projectName);
     const templatePath = path.join(__dirname, 'template');
